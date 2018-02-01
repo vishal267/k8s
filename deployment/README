@@ -1,0 +1,9 @@
+##Creating deployment group 
+kubectl create -f nginx-deployment-dev.yaml
+### Checking 
+kubectl get deploymens
+kubectl describe deployments -l app=nginx-deployment-dev
+###Updating the Deployment Group 
+kubectl apply -f nginx-deployment-dev-update.yaml
+kubectl describe deployments -l app=nginx-deployment-dev
+
