@@ -6,4 +6,8 @@ kubectl describe deployments -l app=nginx-deployment-dev
 ###Updating the Deployment Group 
 kubectl apply -f nginx-deployment-dev-update.yaml
 kubectl describe deployments -l app=nginx-deployment-dev
-
+###Replication Controller 
+kubectl create -f ./replication.yaml
+kubectl describe replicationcontrollers/nginx
+pods=$(kubectl get pods --selector=app=nginx --output=jsonpath={.items..metadata.name})
+echo $pods
